@@ -12,12 +12,31 @@ body, html {
     z-index: -1;
     background-image: url(http://i.imgur.com/FHcqrWd.png);
     background-size: 100% 100%;
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
+
+    -webkit-animation: rotateLoop 4s linear infinite;
+    -moz-animation: rotateLoop 4s linear infinite;
+    -o-animation: rotateLoop 4s linear infinite;
+    animation: rotateLoop 4s linear infinite;
+
 }
 
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@-webkit-keyframes rotateLoop {
+    from { -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(0deg); }
+}
+
+@-moz-keyframes rotateLoop {
+    from { -moz-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(150px) rotate(0deg); }
+}
+
+@-o-keyframes rotateLoop {
+    from { -o-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(150px) rotate(0deg); }
+}
+
+@keyframes rotateLoop {
+    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(150px) rotate(0deg); }
+}
 

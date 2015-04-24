@@ -10,8 +10,8 @@ $(document).ready(function() {
 }
 
 window.setInterval(function () {
-  $('#single_box').remove()
-}, 110);
+  $('#single_box').fadeOut(300, function() {$(this).remove();})
+}, 500);
 
 
 
@@ -50,9 +50,9 @@ window.setInterval(function () {
         var divsize = Math.floor(Math.random() * 501);
         var posx = (Math.random() * ($('body').width() - divsize)).toFixed();
         var posy = (Math.random() * ($('body').height() - divsize)).toFixed();
-        var height = Math.floor(Math.random() * 101);
-        var width = Math.floor(Math.random() * 101);
-        if ($('.box').length < 20) {
+        var height = Math.floor(Math.random() * 50);
+        var width = Math.floor(Math.random() * 50);
+        if ($('.box').length <= 20) {
           $newdiv = $("<div id='single_box' class='box'></div>").css({
             'left': posx + 'px',
             'top': posy + 'px',
@@ -60,10 +60,23 @@ window.setInterval(function () {
             'height': width + 'px'
         });
         // $('.box').css({borde: getRandomColor()});
-        $newdiv.appendTo('body').delay(100).fadeIn(100, function () {
+        $newdiv.appendTo('body').delay(50).fadeIn(100, function () {
             makeDiv();
         });
+        if ($('.box').length === 20) {
+          $newdiv = $("<div id='single_box' class='box'></div>").css({
+            'left': posx + 'px',
+            'top': posy + 'px',
+            'width': width + 'px',
+            'height': width + 'px'
+        });
+        // $('.box').css({borde: getRandomColor()});
+        $newdiv.appendTo('body').delay(1250).fadeIn(100, function () {
+            makeDiv();
+        });
+        }
           }
+
     }
     makeDiv();
 
