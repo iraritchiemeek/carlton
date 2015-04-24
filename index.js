@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('#robotfish').hide();
 
   function getRandomColor() {
     var letters = '0123456789ABCDEF'.split('');
@@ -79,6 +80,12 @@ window.setInterval(function () {
 
     }
     makeDiv();
+
+    $('body').click(function(e) {
+      $('#robotfish').show().animate({
+        left: "+=100%"
+      });
+    });
 
 });
 

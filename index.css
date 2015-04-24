@@ -4,6 +4,7 @@ body, html {
   height: 100%;
 }
 
+
 .box {
     position: absolute;
     height: 25px;
@@ -39,4 +40,63 @@ body, html {
     from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
     to   { transform: rotate(360deg) translateX(150px) rotate(0deg); }
 }
+
+.wrap {
+  perspective: 800px;
+  perspective-origin: 50% 100px;
+}
+
+.cube {
+  position: relative;
+  width: 200px;
+  -webkit-transform-style: preserve-3d;
+}
+
+.cube div {
+  position: absolute;
+  padding: 40px 0px;
+  width: 200px;
+  height: 200px;
+}
+
+.back {
+  background-image: url('http://i.imgur.com/BwmtaWS.gif');
+  background-size:100%;
+  -webkit-transform: translateZ(-100px) rotateY(180deg);
+}
+.right {
+  background-image: url('http://i.imgur.com/BwmtaWS.gif');
+  background-size:100%;
+  -webkit-transform: rotateY(-270deg) translateX(100px);
+  -webkit-transform-origin: top right;
+}
+.left {
+  background-image: url('http://i.imgur.com/BwmtaWS.gif');
+  background-size:100%;
+  -webkit-transform: rotateY(270deg) translateX(-100px);
+  -webkit-transform-origin: center left;
+}
+.top {
+  -webkit-transform: rotateX(-90deg) translateY(-100px);
+  -webkit-transform-origin: top center;
+}
+.bottom {
+  -webkit-transform: rotateX(90deg) translateY(100px);
+  -webkit-transform-origin: bottom center;
+}
+.front {
+  background-image: url('http://i.imgur.com/BwmtaWS.gif');
+  background-size:100%;
+  -webkit-transform: translateZ(100px);
+}
+
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotateY(0deg); }
+  to { -webkit-transform: rotateY(360deg); }
+}
+
+.cube {
+  -webkit-animation: spin 4s infinite linear;
+}
+
 
