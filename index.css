@@ -57,6 +57,7 @@ body, html {
   padding: 40px 0px;
   width: 200px;
   height: 200px;
+  background-repeat: no-repeat;
 }
 
 .back {
@@ -65,8 +66,9 @@ body, html {
   -webkit-transform: translateZ(-100px) rotateY(180deg);
 }
 .right {
-  background-image: url('http://i.imgur.com/BwmtaWS.gif');
+  background-image: url('https://popsicle2014.files.wordpress.com/2014/07/snoop-dogg-gggggga721eb54a9-290x595x58.gif');
   background-size:100%;
+  padding: 0px 0px;
   -webkit-transform: rotateY(-270deg) translateX(100px);
   -webkit-transform-origin: top right;
 }
@@ -96,7 +98,7 @@ body, html {
 }
 
 .cube {
-  -webkit-animation: spin 4s infinite linear;
+  -webkit-animation: spin 6s infinite linear;
 }
 
 

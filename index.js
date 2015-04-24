@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#robotfish').hide();
+  $('.cube').hide();
 
   function getRandomColor() {
     var letters = '0123456789ABCDEF'.split('');
@@ -11,7 +11,7 @@ $(document).ready(function() {
 }
 
 window.setInterval(function () {
-  $('#single_box').fadeOut(300, function() {$(this).remove();})
+  $('#single_box').fadeOut(200, function() {$(this).remove();})
 }, 500);
 
 
@@ -19,6 +19,8 @@ window.setInterval(function () {
   $('body').keydown(function(e) {
     if ( e.which === 32 ) {
       $(this).css({backgroundColor: getRandomColor()})
+      $('.cube').show()
+      $( "audio" ).trigger( "play" );
     }
     if ( e.which === 38 ) {
       $('.box').animate({
@@ -80,12 +82,6 @@ window.setInterval(function () {
 
     }
     makeDiv();
-
-    $('body').click(function(e) {
-      $('#robotfish').show().animate({
-        left: "+=100%"
-      });
-    });
 
 });
 
